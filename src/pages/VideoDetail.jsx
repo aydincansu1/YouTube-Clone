@@ -22,16 +22,17 @@ const VideoDetail = () => {
 
   //3) idsi bilinen videonun bilgilerini api'den al
   useEffect(() => {
-    // getData(`/video/info?id=${id}&extend=1`).then((data) => setVideo(data));
-    // getData(`/comments?id=${id}`).then((res) => setComments(res.data));
+    getData(`/video/info?id=${id}&extend=1`).then((data) => setVideo(data));
+    getData(`/comments?id=${id}`).then((res) => setComments(res.data));
   }, [searchParams]);
   return (
     <div className="detail-page h-screen overflow-auto p-5">
       {/*Video icerigi */}
       <div>
         <ReactPlayer
-          className={"rounded "}
+          className={"rounded"}
           width={"100%"}
+          height={"50vh"}
           light
           playing
           controls
